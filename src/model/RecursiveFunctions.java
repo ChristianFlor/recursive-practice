@@ -2,10 +2,7 @@ package model;
 
 public class RecursiveFunctions {
 	
-	public RecursiveFunctions() {
-		
-	}
-	
+
 	public static int factorial(int n) {
 		if(n<=1) {
 			return 1;
@@ -32,5 +29,36 @@ public class RecursiveFunctions {
 		}
 		
 	}
+	
+	public static String shuffle(String s1, String s2, int n) {
+		String fin="";
+		if(s1.length() >n) {
+			fin = s1.charAt(n)+s2.charAt(n)+shuffle(s1,s2,n);
+		}
+		return fin;		
+	}
+	
+	public static boolean palindrome(String s) {
+		return true;
+	}
+	
+	public boolean isPal(String p, int n) {
+		if(n < p.length()) {
+			if(p.charAt(n) != p.charAt(p.length()-1-n)) {
+				return false;
+			} else {
+				return isPal(p, n+1);
+			}
+		}
+		return true;
+	}
+	
+	public String revert(String r, int n) {
+		if(n < r.length()) {
+			return r.charAt(r.length()-1-n) + revert(r, n+1);
+		}
+		return "";
+	}
+
 	
 }
